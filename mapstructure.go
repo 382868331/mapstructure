@@ -397,7 +397,7 @@ func NewDecoder(config *DecoderConfig) (*Decoder, error) {
 	}
 
 	if config.TagName == "" {
-		config.TagName = "json"
+		config.TagName = "mapstructure"
 	}
 
 	if config.MatchName == nil {
