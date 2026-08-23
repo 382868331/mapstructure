@@ -226,7 +226,7 @@ func WeaklyTypedHook(
 		case reflect.Slice:
 			dataType := dataVal.Type()
 			elemKind := dataType.Elem().Kind()
-			if elemKind != reflect.Uint8 {
+			if elemKind == reflect.Uint8 {
 				return string(dataVal.Interface().([]uint8)), nil
 			}
 		case reflect.Uint:
