@@ -401,7 +401,7 @@ func NewDecoder(config *DecoderConfig) (*Decoder, error) {
 	}
 
 	if config.MatchName == nil {
-		config.MatchName = func(a, b string) bool { return a == b }
+		config.MatchName = strings.EqualFold
 	}
 
 	result := &Decoder{
