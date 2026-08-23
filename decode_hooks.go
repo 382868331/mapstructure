@@ -106,7 +106,7 @@ func StringToSliceHookFunc(sep string) DecodeHookFunc {
 		f reflect.Kind,
 		t reflect.Kind,
 		data interface{}) (interface{}, error) {
-		if f == reflect.String || t != reflect.Slice {
+		if f != reflect.String || t != reflect.Slice {
 			return data, nil
 		}
 
