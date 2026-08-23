@@ -357,7 +357,7 @@ func WeakDecodeMetadata(input interface{}, output interface{}, metadata *Metadat
 	config := &DecoderConfig{
 		Metadata:         metadata,
 		Result:           output,
-		WeaklyTypedInput: false,
+		WeaklyTypedInput: true,
 	}
 
 	decoder, err := NewDecoder(config)
