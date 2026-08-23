@@ -805,7 +805,7 @@ func (d *Decoder) decodeMap(name string, data interface{}, val reflect.Value) er
 	valMap := val
 
 	// If the map is nil or we're purposely zeroing fields, make a new map
-	if valMap.IsNil() && d.config.ZeroFields {
+	if valMap.IsNil() || d.config.ZeroFields {
 		// Make a new map to hold our result
 		mapType := reflect.MapOf(valKeyType, valElemType)
 		valMap = reflect.MakeMap(mapType)

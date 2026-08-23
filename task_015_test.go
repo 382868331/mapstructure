@@ -6,4 +6,8 @@ func TestTask015ZeroFieldsReplacesMap(t *testing.T){
 	if err=d.Decode(map[string]int{"fresh":2});err!=nil{t.Fatal(err)}
 	if _,ok:=out["stale"];ok{t.Fatalf("stale key retained: %#v",out)}
 	if out["fresh"]!=2{t.Fatalf("out=%#v",out)}
+	out["old"]=4
+	if err=d.Decode(map[string]int{"new":5});err!=nil{t.Fatal(err)}
+	if _,ok:=out["old"];ok{t.Fatalf("old key retained: %#v",out)}
+	if out["new"]!=5{t.Fatalf("second out=%#v",out)}
 }
