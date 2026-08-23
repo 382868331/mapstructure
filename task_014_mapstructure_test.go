@@ -6,3 +6,10 @@ import "testing"
 func TestTask014(t *testing.T) {
 	TestStructToMapHookFuncTabled(t)
 }
+
+// TestTask014Repeat guards deterministic behavior across repeated calls.
+func TestTask014Repeat(t *testing.T) {
+	for attempt := 0; attempt < 2; attempt++ {
+		TestTask014(t)
+	}
+}
