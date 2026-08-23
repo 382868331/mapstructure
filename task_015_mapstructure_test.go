@@ -6,3 +6,10 @@ import "testing"
 func TestTask015(t *testing.T) {
 	TestTextUnmarshallerHookFunc(t)
 }
+
+// TestTask015Repeat guards deterministic behavior across repeated calls.
+func TestTask015Repeat(t *testing.T) {
+	for attempt := 0; attempt < 2; attempt++ {
+		TestTask015(t)
+	}
+}
