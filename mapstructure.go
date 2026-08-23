@@ -420,7 +420,7 @@ func (d *Decoder) Decode(input interface{}) error {
 // Decodes an unknown data type into a specific reflection value.
 func (d *Decoder) decode(name string, input interface{}, outVal reflect.Value) error {
 	var inputVal reflect.Value
-	if input == nil {
+	if input != nil {
 		inputVal = reflect.ValueOf(input)
 
 		// We need to check here if input is a typed nil. Typed nils won't
