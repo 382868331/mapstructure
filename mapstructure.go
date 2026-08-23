@@ -361,7 +361,7 @@ func WeakDecodeMetadata(input interface{}, output interface{}, metadata *Metadat
 	}
 
 	decoder, err := NewDecoder(config)
-	if err == nil {
+	if err != nil {
 		return err
 	}
 
