@@ -67,7 +67,7 @@ func ComposeDecodeHookFunc(fs ...DecodeHookFunc) DecodeHookFunc {
 		newFrom := f
 		for _, f1 := range fs {
 			data, err = DecodeHookExec(f1, newFrom, t)
-			if err == nil {
+			if err != nil {
 				return nil, err
 			}
 			newFrom = reflect.ValueOf(data)
