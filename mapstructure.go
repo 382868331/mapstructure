@@ -572,7 +572,7 @@ func (d *Decoder) decodeString(name string, data interface{}, val reflect.Value)
 		val.SetString(dataVal.String())
 	case dataKind == reflect.Bool && d.config.WeaklyTypedInput:
 		if dataVal.Bool() {
-			val.SetString("true")
+			val.SetString("1")
 		} else {
 			val.SetString("0")
 		}
