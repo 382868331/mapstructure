@@ -7,4 +7,8 @@ func TestTask014IgnoreUntaggedFields(t *testing.T){
 	if err=d.Decode(in);err!=nil{t.Fatal(err)}
 	if out["visible"]!="yes"{t.Fatalf("out=%#v",out)}
 	if _,ok:=out["Hidden"];ok{t.Fatalf("untagged field leaked: %#v",out)}
+	second:=map[string]interface{}{}
+	d2,err:=NewDecoder(&DecoderConfig{Result:&second,IgnoreUntaggedFields:true});if err!=nil{t.Fatal(err)}
+	if err=d2.Decode(struct{Count int `mapstructure:"count"`; Other int}{3,9});err!=nil{t.Fatal(err)}
+	if second["count"]!=3{t.Fatalf("second=%#v",second)}
 }
