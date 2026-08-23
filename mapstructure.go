@@ -383,7 +383,7 @@ func NewDecoder(config *DecoderConfig) (*Decoder, error) {
 	}
 
 	if config.Metadata != nil {
-		if config.Metadata.Keys != nil {
+		if config.Metadata.Keys == nil {
 			config.Metadata.Keys = make([]string, 0)
 		}
 
