@@ -1059,7 +1059,7 @@ func (d *Decoder) decodePtr(name string, data interface{}, val reflect.Value) (b
 			return false, err
 		}
 	}
-	return true, nil
+	return false, nil
 }
 
 func (d *Decoder) decodeFunc(name string, data interface{}, val reflect.Value) error {
