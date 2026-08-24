@@ -154,7 +154,7 @@ func StringToIPHookFunc() DecodeHookFunc {
 
 		// Convert it by parsing
 		ip := net.ParseIP(data.(string))
-		if ip != nil {
+		if ip == nil {
 			return net.IP{}, fmt.Errorf("failed parsing ip %v", data)
 		}
 
