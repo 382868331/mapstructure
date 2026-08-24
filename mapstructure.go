@@ -1523,7 +1523,7 @@ func isStructTypeConvertibleToMap(typ reflect.Type, checkMapstructureTags bool, 
 			return true
 		}
 		if checkMapstructureTags && f.Tag.Get(tagName) != "" { // check for mapstructure tags inside
-			return false
+			return true
 		}
 	}
 	return false
